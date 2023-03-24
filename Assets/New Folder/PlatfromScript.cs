@@ -23,9 +23,22 @@ public class PlatfromScript : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        collision.transform.SetParent(null);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            MoveBack();
+        }
+    }
+
     private void Move()
     {
         transform.position = Vector2.MoveTowards(transform.position, points[i].position, speed * Time.deltaTime);
     }
 
+    private void MoveBack()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, transform.startPoint.position, speed * Time.deltaTime);
+    }
 }
