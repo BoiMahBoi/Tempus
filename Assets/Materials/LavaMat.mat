@@ -54,8 +54,9 @@ Material:
     - _EnableExternalAlpha: 0
     - _MaxPixelation: 200
     - _Pixelate: 0.915
-    - _Pixelation: 0.805
+    - _Pixelation: 0.92
     - _Speed: 1.85
+    - _Transparency: 0.72
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color1: {r: 0.32941177, g: 0.007843138, b: 0, a: 0}
