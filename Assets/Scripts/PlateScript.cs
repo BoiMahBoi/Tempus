@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class PlateScript : MonoBehaviour
 {
-    public float startY;
+    private float startY;
     public float endY;
 
     public GameObject[] childPlatfroms;
-    public float childStartY;
     public float childEndY;
     private float[] childStartPunkt;
 
     private void Start()
     {
         startY = transform.position.y;
-        childStartY = transform.position.y;
 
         childStartPunkt = new float[childPlatfroms.Length];
         for(int i = 0; i < childPlatfroms.Length; i++)
@@ -26,8 +24,9 @@ public class PlateScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        Debug.Log("Hey");
         collision.transform.SetParent(transform);
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Crate"))
         {
             childMoveUp();
             movevagte();
@@ -37,7 +36,7 @@ public class PlateScript : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         collision.transform.SetParent(null);
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Crate"))
         {
             moveback();
         }
@@ -47,14 +46,14 @@ public class PlateScript : MonoBehaviour
     {
         if (transform.position.y > startY - endY)
         {
-            transform.position = new Vector2(transform.position.x,transform.position.y - 0.05f);
+            transform.position = new Vector2(transform.position.x,transform.position.y - (0.05f));
         }
     }
     public void moveback()
     {
         if (transform.position.y < startY)
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y + 0.05f);
+            transform.position = new Vector2(transform.position.x, transform.position.y + (0.05f));
         }
     }
 
@@ -63,10 +62,9 @@ public class PlateScript : MonoBehaviour
         int i = 0;
        foreach(GameObject childObject in childPlatfroms)
         {
-            if (childObject.transform.position.y < childStartPunkt[i] + endY)
+            if (childObject.transform.position.y < childStartPunkt[i] + childEndY)
             {
-                Debug.Log("hey");
-                childObject.transform.position = new Vector2(childObject.transform.position.x, childObject.transform.position.y + 0.05f);
+                childObject.transform.position = new Vector2(childObject.transform.position.x, childObject.transform.position.y + (0.05f));
             }
             i++;
            

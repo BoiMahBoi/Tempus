@@ -6,18 +6,25 @@ using UnityEngine.SceneManagement;
 public class CutSceneManagerScript : MonoBehaviour
 {
 
-    public float loadTime;
-
+    public float imagePlayTime;
+    public Sprite[] ImageSequence;
+    private int currentImageIndex = 0;
+    
     // Start is called before the first frame update
     void Start()
-    {
-        StartCoroutine(LoadLevelAfterTime(loadTime));
+    {   
+        gameObject.AddComponent<SpriteRenderer>();
+        StartCoroutine(PlayCutscene(imagePlayTime));
     }
 
-    IEnumerator LoadLevelAfterTime( float loadTime) 
+    IEnumerator PlayCutscene(float imagePlayTime) 
     {
-        yield return new WaitForSeconds(loadTime);
+        foreach (var image in ImageSequence)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = ImageSequence[currentImageIndex];
+            yield return new WaitForSeconds(imagePlayTime);
+            currentImageIndex++;
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
-
 }
