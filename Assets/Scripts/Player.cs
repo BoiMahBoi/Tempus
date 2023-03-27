@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D col)
     {
-        
+        Debug.Log("Something happened!");   
     }
 
     void OnTriggerExit2D(Collider2D col)
