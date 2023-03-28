@@ -15,23 +15,23 @@ public class IndividualMovementApplying : MonoBehaviour
     public float maxSpeed;
     public float jumpForce;
     public bool onGround;
-    public GameObject footCol;
-    public GameObject headCol;
+    //public GameObject footCol;
+    //public GameObject headCol;
 
     void Start()
     {
-        rb = transform.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         sr = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     public void SetTimeOffset()
     {
-        timeOffset = Time.time - float.Parse(transform.gameObject.GetComponent<IndividualMovementStoring>().movements[0][2]);
+        timeOffset = Time.time - float.Parse(gameObject.GetComponent<IndividualMovementStoring>().movements[0][2]);
     }
 
     void Update()
     {
-        var moveStorage = transform.gameObject.GetComponent<IndividualMovementStoring>();
+        var moveStorage = gameObject.GetComponent<IndividualMovementStoring>();
         
         if (completedMovements < moveStorage.movements.Count)
         {
@@ -104,23 +104,8 @@ public class IndividualMovementApplying : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    public void SetOnGround(bool status)
     {
-        onGround = true;
-    }
-
-    void OnCollisionExit2D(Collision2D col)
-    {
-        onGround = false;
-    }
-    
-    void OnTriggerEnter2D(Collider2D col)
-    {
-
-    }
-
-    void OnTriggerExit2D(Collider2D col)
-    {
-
+        onGround = status;
     }
 }
