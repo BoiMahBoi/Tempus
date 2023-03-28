@@ -7,6 +7,9 @@ TagManager:
   - Platform
   - FootCollider
   - HeadCollider
+  - Collectable
+  - Exit
+  - Crate
   layers:
   - Default
   - TransparentFX
