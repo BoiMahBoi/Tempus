@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerFeet : MonoBehaviour
 {
+    // Remove PlayerFeet entirely, add OnTriggerEnter and OnTriggerExit to Player and MovementApplying, since TriggerCollider is no longer on child object
+
+
     private Player player;
     private IndividualMovementApplying individualMovementApplying;
 
