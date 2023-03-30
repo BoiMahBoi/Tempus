@@ -14,7 +14,7 @@ public class IndividualMovementApplying : MonoBehaviour
     public float moveForce;
     public float maxSpeed;
     public float jumpForce;
-    public bool onGround;
+    public bool onGround;x½
 
     void Start()
     {

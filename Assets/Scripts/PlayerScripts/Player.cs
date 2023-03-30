@@ -85,16 +85,7 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("isFalling", false);
         }
+
         onGround = true;
-    }
-
-    void OnCollisionExit2D(Collision2D col)
-    {
-        if(onGround)
-        {
-            onGround = false;
-        }
-
-        onGround = status;
     }
 }
