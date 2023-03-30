@@ -30,7 +30,6 @@ public class IndividualTimeloop : MonoBehaviour
         }
 
         GameObject timeTravellerInstance = Instantiate(individualTimeTravellerPrefab, transform.position, transform.rotation, timeTravellerManager);
-        timeTravellerInstance.gameObject.GetComponent<Player>().enabled = true; // enable player movement (since this iteration is now the present)
-        timeTravellerInstance.gameObject.GetComponent<Player>().onGround = true;
+        individualTimeTravellers.Add(timeTravellerInstance);
     }
 }

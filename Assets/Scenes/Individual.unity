@@ -727,9 +727,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39ebfe9746a56b49ad15bd629313e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  individualTimeTravellerPrefab: {fileID: 0}
+  individualTimeTravellerPrefab: {fileID: 8939810869670812991, guid: efc858aeeccd71e4e9484b4727c0f379, type: 3}
   timeTravellerManager: {fileID: 176054221}
-  individualTimeTravellers: []
+  individualTimeTravellers:
+  - {fileID: 691310975}
 --- !u!1 &691310975
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +741,7 @@ GameObject:
   m_Component:
   - component: {fileID: 691310976}
   - component: {fileID: 691310979}
+  - component: {fileID: 930745347019489779}
   - component: {fileID: 691310981}
   - component: {fileID: 691310980}
   - component: {fileID: 691310978}
@@ -803,9 +805,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   sr: {fileID: 0}
-  moveForce: 10
-  maxSpeed: 4
-  jumpForce: 4
+  moveForce: 15
+  maxSpeed: 6
+  jumpForce: 10
   isJumping: 0
   onGround: 1
 --- !u!114 &691310980
@@ -824,9 +826,9 @@ MonoBehaviour:
   completedMovements: 0
   rb: {fileID: 0}
   sr: {fileID: 0}
-  moveForce: 10
-  maxSpeed: 4
-  jumpForce: 4
+  moveForce: 15
+  maxSpeed: 6
+  jumpForce: 10
   onGround: 1
 --- !u!114 &691310981
 MonoBehaviour:
@@ -1136,6 +1138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1578127271}
   - component: {fileID: 1578127272}
+  - component: {fileID: 1578127273}
   m_Layer: 6
   m_Name: GFX
   m_TagString: Untagged
@@ -1210,6 +1213,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1578127273
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578127270}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97f0abfc9c2a4e04381f53515d8c1018, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!58 &591736482063309803
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1242,3 +1266,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
   m_Direction: 0
+--- !u!114 &930745347019489779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691310975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbdb9f7f16664f449ad0448e500fc9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

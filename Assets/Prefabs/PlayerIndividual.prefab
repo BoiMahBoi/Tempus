@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8939810868275921895}
   - component: {fileID: 8939810868275921896}
+  - component: {fileID: 6567881856614132070}
   m_Layer: 6
   m_Name: GFX
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6567881856614132070
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8939810868275921894}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97f0abfc9c2a4e04381f53515d8c1018, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8939810869670812991
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8939810869670813120}
   - component: {fileID: 8939810869670813123}
+  - component: {fileID: 5281728611840840656}
   - component: {fileID: 8939810869670813125}
   - component: {fileID: 8939810869670813124}
   - component: {fileID: 8939810869670813122}
@@ -136,13 +159,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   sr: {fileID: 0}
-  moveForce: 10
-  maxSpeed: 4
-  jumpForce: 4
+  moveForce: 15
+  maxSpeed: 6
+  jumpForce: 10
   isJumping: 0
   onGround: 1
-  footCol: {fileID: 0}
-  headCol: {fileID: 0}
+--- !u!114 &5281728611840840656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8939810869670812991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbdb9f7f16664f449ad0448e500fc9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8939810869670813125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,12 +205,10 @@ MonoBehaviour:
   completedMovements: 0
   rb: {fileID: 0}
   sr: {fileID: 0}
-  moveForce: 10
-  maxSpeed: 4
-  jumpForce: 4
+  moveForce: 15
+  maxSpeed: 6
+  jumpForce: 10
   onGround: 1
-  footCol: {fileID: 0}
-  headCol: {fileID: 0}
 --- !u!50 &8939810869670813122
 Rigidbody2D:
   serializedVersion: 4

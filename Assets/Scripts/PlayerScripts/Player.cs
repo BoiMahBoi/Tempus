@@ -6,27 +6,24 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D rb;
     public SpriteRenderer sr;
+    private Animator animator;
     public float moveForce;
     public float maxSpeed;
     public float jumpForce;
     public bool isJumping;
     public bool onGround;
-    public GameObject footCol;
-    public GameObject headCol;
-    private Animator animator;
 
     void Start()
     {
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        sr = gameObject.GetComponentInChildren<SpriteRenderer>();
         animator = gameObject.GetComponentInChildren<Animator>();
-        rb = transform.GetComponent<Rigidbody2D>();
-        sr = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         if (Input.GetKey(KeyCode.Space) && onGround)
         {
-            animator.SetBool("isJumping", true);
             isJumping = true;
         }
     }
@@ -37,6 +34,7 @@ public class Player : MonoBehaviour
         if((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
         {
             animator.SetBool("isRunning", true);
+            
             if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
             {
                 direction = -1.0f;
@@ -48,8 +46,7 @@ public class Player : MonoBehaviour
                 sr.flipX = false;
             }
         }
-
-        if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        else
         {
             animator.SetBool("isRunning", false);
         }
@@ -67,6 +64,7 @@ public class Player : MonoBehaviour
 
         if (isJumping)
         {
+            animator.SetBool("isJumping", true);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isJumping = false;
         }
@@ -76,16 +74,15 @@ public class Player : MonoBehaviour
             animator.SetBool("isJumping", false);
             animator.SetBool("isFalling", true);
         } 
-
     }
 
     public void SetOnGround(bool status)
     {
-        if (!onGround)
+        onGround = status;
+        
+        if (onGround)
         {
             animator.SetBool("isFalling", false);
         }
-
-        onGround = true;
     }
 }

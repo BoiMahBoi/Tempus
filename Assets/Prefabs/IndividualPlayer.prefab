@@ -210,8 +210,6 @@ MonoBehaviour:
   jumpForce: 4
   isJumping: 0
   onGround: 1
-  footCol: {fileID: 9036801056037605730}
-  headCol: {fileID: 9036801054237032500}
 --- !u!114 &4043205818979657107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6cee26baa2f3f44db085c53d33d9ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOffset: 4
+  timeOffset: 0
   completedMovements: 0
   rb: {fileID: 0}
   sr: {fileID: 0}
@@ -245,8 +243,6 @@ MonoBehaviour:
   maxSpeed: 6
   jumpForce: 4
   onGround: 1
-  footCol: {fileID: 9036801056037605730}
-  headCol: {fileID: 9036801054237032500}
 --- !u!50 &9036801054618723975
 Rigidbody2D:
   serializedVersion: 4
