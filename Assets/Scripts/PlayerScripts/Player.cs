@@ -13,9 +13,11 @@ public class Player : MonoBehaviour
     public bool onGround;
     public GameObject footCol;
     public GameObject headCol;
+    private Animator animator;
 
     void Start()
     {
+        animator = gameObject.GetComponentInChildren<Animator>();
         rb = transform.GetComponent<Rigidbody2D>();
         sr = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
@@ -24,6 +26,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && onGround)
         {
+            animator.SetBool("isJumping", true);
             isJumping = true;
         }
     }
@@ -31,15 +34,24 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         float direction = 0;
-        if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        if((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
         {
-            direction = -1.0f;
-            sr.flipX = true;
+            animator.SetBool("isRunning", true);
+            if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+            {
+                direction = -1.0f;
+                sr.flipX = true;
+            }
+            if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+            {
+                direction = 1.0f;
+                sr.flipX = false;
+            }
         }
-        if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+
+        if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
-            direction = 1.0f;
-            sr.flipX = false;
+            animator.SetBool("isRunning", false);
         }
 
         rb.AddForce(Vector2.right * direction * moveForce);
@@ -58,25 +70,30 @@ public class Player : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isJumping = false;
         }
+
+        if(rb.velocity.y < 0.5)
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", true);
+        } 
+
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        if (!onGround)
+        {
+            animator.SetBool("isFalling", false);
+        }
         onGround = true;
     }
 
     void OnCollisionExit2D(Collision2D col)
     {
-        onGround = false;
+        if(onGround)
+        {
+            onGround = false;
+        }
     }
     
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        Debug.Log("Something happened!");   
-    }
-
-    void OnTriggerExit2D(Collider2D col)
-    {
-
-    }
 }

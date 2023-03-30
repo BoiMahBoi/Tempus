@@ -12,12 +12,15 @@ public class Crumble : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision!");
         if (collision.gameObject.GetComponent<Rigidbody2D>() != null && !isCrumbling)
         {
-            Debug.Log("Crumblin' time!");
-            StartCoroutine(CrumbleObject(crumbleTime));
+            LifeIsSuffering();
         }
+    }
+
+    public void LifeIsSuffering()
+    {
+        StartCoroutine(CrumbleObject(crumbleTime));
     }
 
     private IEnumerator CrumbleObject(float crumbleTime)

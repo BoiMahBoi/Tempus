@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2770322933482203951}
   - component: {fileID: 2770322933482203944}
   - component: {fileID: 2770322933482203945}
+  - component: {fileID: 1676368281035761440}
   - component: {fileID: 2770322933482203946}
   m_Layer: 0
   m_Name: WeightedPlatform 2
@@ -139,6 +140,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.2}
   m_EdgeRadius: 0
+--- !u!50 &1676368281035761440
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2770322933482203924}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!114 &2770322933482203946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +190,7 @@ GameObject:
   - component: {fileID: 2770322933914776887}
   - component: {fileID: 2770322933914776880}
   - component: {fileID: 2770322933914776881}
+  - component: {fileID: 5845053667568819304}
   - component: {fileID: 2770322933914776882}
   m_Layer: 0
   m_Name: WeightedPlatform 1
@@ -295,6 +318,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.2}
   m_EdgeRadius: 0
+--- !u!50 &5845053667568819304
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2770322933914776883}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!114 &2770322933914776882
 MonoBehaviour:
   m_ObjectHideFlags: 0

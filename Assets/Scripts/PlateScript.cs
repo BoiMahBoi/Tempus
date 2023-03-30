@@ -75,12 +75,18 @@ public class PlateScript : MonoBehaviour
         int i = 0;
        foreach(GameObject childObject in childPlatfroms)
         {
-            if (childObject.transform.position.y < childStartPunkt[i] + childEndY)
+            if(childObject.GetComponent<PlateScript>() != null)
             {
-                childObject.transform.position = new Vector2(childObject.transform.position.x, childObject.transform.position.y + (0.05f * platformSpeed));
+                if (childObject.transform.position.y < childStartPunkt[i] + childEndY)
+                {
+                    childObject.transform.position = new Vector2(childObject.transform.position.x, childObject.transform.position.y + (0.05f * platformSpeed));
+                }
+            } else if(childObject.GetComponent<Crumble>() != null)
+            {
+                childObject.GetComponent<Crumble>().LifeIsSuffering();
             }
+            
             i++;
-           
         }
     }
 }
