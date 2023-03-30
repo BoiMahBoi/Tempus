@@ -7,6 +7,9 @@ public class PlateScript : MonoBehaviour
     private float startY;
     public float endY;
 
+    [Range(0.1f, 5)]
+    public float platformSpeed;
+
     public GameObject[] childPlatfroms;
     public float childEndY;
     private float[] childStartPunkt;
@@ -46,14 +49,14 @@ public class PlateScript : MonoBehaviour
     {
         if (transform.position.y > startY - endY)
         {
-            transform.position = new Vector2(transform.position.x,transform.position.y - (0.05f));
+            transform.position = new Vector2(transform.position.x,transform.position.y - (0.05f * platformSpeed));
         }
     }
     public void moveback()
     {
         if (transform.position.y < startY)
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y + (0.05f));
+            transform.position = new Vector2(transform.position.x, transform.position.y + (0.05f * platformSpeed));
         }
     }
 
@@ -64,7 +67,7 @@ public class PlateScript : MonoBehaviour
         {
             if (childObject.transform.position.y < childStartPunkt[i] + childEndY)
             {
-                childObject.transform.position = new Vector2(childObject.transform.position.x, childObject.transform.position.y + (0.05f));
+                childObject.transform.position = new Vector2(childObject.transform.position.x, childObject.transform.position.y + (0.05f * platformSpeed));
             }
             i++;
            

@@ -8,8 +8,8 @@ TagManager:
   - FootCollider
   - HeadCollider
   - Collectable
-  - Exit
   - Crate
+  - ExitTrigger
   layers:
   - Default
   - TransparentFX
