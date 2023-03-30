@@ -20,12 +20,10 @@ public class PlatfromScript : MonoBehaviour
     {
         if (isActive)
         {
-            transform.position = Vector2.MoveTowards(transform.position, activePos, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, (isActive ? activePos : startPos), speed * Time.deltaTime);
         }
-        else
-        {
-            transform.position = Vector2.MoveTowards(transform.position, startPos, speed * Time.deltaTime);
-        }
+
+        // use isActive to trigger other objects
 
         isActive = false;
     }
