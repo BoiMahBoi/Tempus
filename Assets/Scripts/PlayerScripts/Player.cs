@@ -11,8 +11,6 @@ public class Player : MonoBehaviour
     public float jumpForce;
     public bool isJumping;
     public bool onGround;
-    public GameObject footCol;
-    public GameObject headCol;
 
     void Start()
     {
@@ -60,23 +58,8 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    public void SetOnGround(bool status)
     {
-        onGround = true;
-    }
-
-    void OnCollisionExit2D(Collision2D col)
-    {
-        onGround = false;
-    }
-    
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        Debug.Log("Something happened!");   
-    }
-
-    void OnTriggerExit2D(Collider2D col)
-    {
-
+        onGround = status;
     }
 }
