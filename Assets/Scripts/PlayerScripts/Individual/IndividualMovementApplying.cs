@@ -15,8 +15,6 @@ public class IndividualMovementApplying : MonoBehaviour
     public float maxSpeed;
     public float jumpForce;
     public bool onGround;
-    public GameObject footCol;
-    public GameObject headCol;
 
     void Start()
     {
@@ -104,23 +102,8 @@ public class IndividualMovementApplying : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    public void SetOnGround(bool status)
     {
-        onGround = true;
-    }
-
-    void OnCollisionExit2D(Collision2D col)
-    {
-        onGround = false;
-    }
-    
-    void OnTriggerEnter2D(Collider2D col)
-    {
-
-    }
-
-    void OnTriggerExit2D(Collider2D col)
-    {
-
+        onGround = status;
     }
 }

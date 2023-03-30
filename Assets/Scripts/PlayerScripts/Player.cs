@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    public void SetOnGround(bool status)
     {
         if (!onGround)
         {
@@ -94,6 +94,7 @@ public class Player : MonoBehaviour
         {
             onGround = false;
         }
+
+        onGround = status;
     }
-    
 }
