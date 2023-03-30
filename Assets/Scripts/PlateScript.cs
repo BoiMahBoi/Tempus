@@ -27,10 +27,15 @@ public class PlateScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Hey");
-        collision.transform.SetParent(transform);
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Crate"))
+        if(collision.gameObject.CompareTag("Player"))
         {
+            childMoveUp();
+            movevagte();
+        }
+
+        if (collision.gameObject.CompareTag("Crate"))
+        {
+            collision.transform.SetParent(transform);
             childMoveUp();
             movevagte();
         }
@@ -38,9 +43,14 @@ public class PlateScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collision.transform.SetParent(null);
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Crate"))
+        if(collision.gameObject.CompareTag("Player"))
         {
+            moveback();
+        }
+
+        if (collision.gameObject.CompareTag("Crate"))
+        {
+            collision.transform.SetParent(null);
             moveback();
         }
     }

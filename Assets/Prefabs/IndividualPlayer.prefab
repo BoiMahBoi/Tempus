@@ -219,8 +219,8 @@ MonoBehaviour:
   completedMovements: 0
   rb: {fileID: 0}
   sr: {fileID: 0}
-  moveForce: 10
-  maxSpeed: 4
+  moveForce: 15
+  maxSpeed: 6
   jumpForce: 4
   onGround: 1
   footCol: {fileID: 9036801056037605730}
