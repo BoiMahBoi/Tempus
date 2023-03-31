@@ -33,42 +33,45 @@ public class IndividualMovementApplying : MonoBehaviour
     {
         var moveStorage = transform.gameObject.GetComponent<IndividualMovementStoring>();
         
-        if (completedMovements < moveStorage.movements.Count)
+        if (moveStorage != null)
         {
-            if (Time.time > float.Parse(moveStorage.movements[completedMovements][2]) + timeOffset)
+            if (completedMovements < moveStorage.movements.Count)
             {
-                if (moveStorage.movements[completedMovements][0] == "down")
+                if (Time.time > float.Parse(moveStorage.movements[completedMovements][2]) + timeOffset)
                 {
-                    if (moveStorage.movements[completedMovements][1] == "A")
+                    if (moveStorage.movements[completedMovements][0] == "down")
                     {
-                        a = true;
+                        if (moveStorage.movements[completedMovements][1] == "A")
+                        {
+                            a = true;
+                        }
+                        if (moveStorage.movements[completedMovements][1] == "D")
+                        {
+                            d = true;
+                        }
+                        if (moveStorage.movements[completedMovements][1] == "Space")
+                        {
+                            space = true;
+                        }
                     }
-                    if (moveStorage.movements[completedMovements][1] == "D")
+                    if (moveStorage.movements[completedMovements][0] == "up")
                     {
-                        d = true;
+                        if (moveStorage.movements[completedMovements][1] == "A")
+                        {
+                            a = false;
+                        }
+                        if (moveStorage.movements[completedMovements][1] == "D")
+                        {
+                            d = false;
+                        }
+                        if (moveStorage.movements[completedMovements][1] == "Space")
+                        {
+                            space = false;
+                        }
                     }
-                    if (moveStorage.movements[completedMovements][1] == "Space")
-                    {
-                        space = true;
-                    }
-                }
-                if (moveStorage.movements[completedMovements][0] == "up")
-                {
-                    if (moveStorage.movements[completedMovements][1] == "A")
-                    {
-                        a = false;
-                    }
-                    if (moveStorage.movements[completedMovements][1] == "D")
-                    {
-                        d = false;
-                    }
-                    if (moveStorage.movements[completedMovements][1] == "Space")
-                    {
-                        space = false;
-                    }
-                }
 
-                completedMovements++;
+                    completedMovements++;
+                }
             }
         }
     }
