@@ -7,6 +7,7 @@ public class Crumble : MonoBehaviour
 
     public float crumbleTime;
     public float respawnObjectTime;
+    public bool canCarryCrates;
 
     private bool isCrumbling = false;
 
@@ -14,7 +15,13 @@ public class Crumble : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Rigidbody2D>() != null && !isCrumbling)
         {
-            LifeIsSuffering();
+            if(collision.gameObject.CompareTag("Crate") && !canCarryCrates)
+            {
+                LifeIsSuffering();
+            } else if (!collision.gameObject.CompareTag("Crate"))
+            {
+                LifeIsSuffering();
+            }
         }
     }
 
