@@ -440,8 +440,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39ebfe9746a56b49ad15bd629313e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  individualTimeTraveller: {fileID: 9036801054618723971, guid: 44caf9c4a2e68dc43bb1f967fe0e6d86, type: 3}
+  individualTimeTravellerPrefab: {fileID: 0}
   timeTravellerManager: {fileID: 1162245207}
+  individualTimeTravellers: []
 --- !u!4 &1162245207
 Transform:
   m_ObjectHideFlags: 0
@@ -2263,8 +2264,6 @@ MonoBehaviour:
   maxSpeed: 4
   jumpForce: 4
   onGround: 1
-  footCol: {fileID: 838410637}
-  headCol: {fileID: 1834064047}
 --- !u!114 &1715820381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2297,8 +2296,6 @@ MonoBehaviour:
   jumpForce: 4
   isJumping: 0
   onGround: 1
-  footCol: {fileID: 838410637}
-  headCol: {fileID: 1834064047}
 --- !u!70 &1715820383
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
