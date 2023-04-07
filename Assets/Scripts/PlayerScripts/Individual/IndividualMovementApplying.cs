@@ -16,12 +16,14 @@ public class IndividualMovementApplying : MonoBehaviour
     public float maxSpeed;
     public float jumpForce;
     public bool onGround;
+    private IndividualMovementStoring moveStorage;
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         sr = gameObject.GetComponentInChildren<SpriteRenderer>();
         animator = gameObject.GetComponentInChildren<Animator>();
+        moveStorage = gameObject.GetComponent<IndividualMovementStoring>();
     }
 
     public void SetTimeOffset()
@@ -31,8 +33,6 @@ public class IndividualMovementApplying : MonoBehaviour
 
     void Update()
     {
-        var moveStorage = transform.gameObject.GetComponent<IndividualMovementStoring>();
-        
         if (moveStorage != null)
         {
             if (completedMovements < moveStorage.movements.Count)
@@ -78,7 +78,6 @@ public class IndividualMovementApplying : MonoBehaviour
 
     void FixedUpdate()
     {
-
         float direction = 0;
         if (a || d)
         {

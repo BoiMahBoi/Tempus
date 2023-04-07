@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Player : MonoBehaviour
 {
@@ -17,6 +18,11 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        // move this to a GameManager class
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+        // ------------------------------
+
         rb = gameObject.GetComponent<Rigidbody2D>();
         sr = gameObject.GetComponentInChildren<SpriteRenderer>();
         animator = gameObject.GetComponentInChildren<Animator>();
