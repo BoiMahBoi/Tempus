@@ -5,6 +5,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Player : MonoBehaviour
 {
+    //Variable to hold the ParticleSystem dust.
+    [SerializeField] private ParticleSystem dust;
     public Rigidbody2D rb;
     public SpriteRenderer sr;
     private Animator animator;
@@ -40,7 +42,7 @@ public class Player : MonoBehaviour
         if((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
         {
             animator.SetBool("isRunning", true);
-            
+
             if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
             {
                 direction = -1.0f;
@@ -90,5 +92,11 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("isFalling", false);
         }
+    }
+
+    //Function that creates a quick burst of particles near players feet.
+    void CreateDust()
+    {
+        dust.Play();
     }
 }

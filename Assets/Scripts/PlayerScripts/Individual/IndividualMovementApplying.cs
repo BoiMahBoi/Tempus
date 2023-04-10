@@ -84,7 +84,7 @@ public class IndividualMovementApplying : MonoBehaviour
         if (a || d)
         {
             animator.SetBool("isRunning", true);
-            
+
             if (a)
             {
                 direction = -1.0f;
