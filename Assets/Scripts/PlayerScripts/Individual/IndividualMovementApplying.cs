@@ -5,6 +5,7 @@ using UnityEngine;
 public class IndividualMovementApplying : MonoBehaviour
 {
     public float timeOffset;
+    private IndividualMovementStoring moveStorage;
     public int completedMovements = 0;
     private bool a;
     private bool d;
@@ -16,7 +17,6 @@ public class IndividualMovementApplying : MonoBehaviour
     public float maxSpeed;
     public float jumpForce;
     public bool onGround;
-    private IndividualMovementStoring moveStorage;
 
     void Start()
     {
@@ -28,12 +28,14 @@ public class IndividualMovementApplying : MonoBehaviour
 
     public void SetTimeOffset()
     {
-        timeOffset = Time.time - float.Parse(transform.gameObject.GetComponent<IndividualMovementStoring>().movements[0][2]);
-    }
-
+        if (moveStorage.movements != null)
+        {
+            timeOffset = Time.time - float.Parse(gameObject.GetComponent<IndividualMovementStoring>().movements[0][2]);
+        }
+    }   
     void Update()
     {
-        if (moveStorage != null)
+        if (moveStorage.movements != null)
         {
             if (completedMovements < moveStorage.movements.Count)
             {
@@ -99,7 +101,7 @@ public class IndividualMovementApplying : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
-        rb.AddForce(Vector2.right * direction * moveForce);
+        rb.AddForce(Vector2.right * direction * moveForce, ForceMode2D.Force);
 
         if (rb.velocity.x > maxSpeed)
         {

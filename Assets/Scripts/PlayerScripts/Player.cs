@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
-        rb.AddForce(Vector2.right * direction * moveForce);
+        rb.AddForce(Vector2.right * direction * moveForce, ForceMode2D.Force);
 
         if (rb.velocity.x > maxSpeed)
         {

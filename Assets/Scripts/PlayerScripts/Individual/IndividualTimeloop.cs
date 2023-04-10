@@ -30,11 +30,12 @@ public class IndividualTimeloop : MonoBehaviour
             }
 
             timeTraveller.transform.position = timeTravellerManager.transform.position;
+            timeTraveller.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             timeTraveller.gameObject.GetComponent<IndividualMovementApplying>().completedMovements = 0;
             timeTraveller.gameObject.GetComponent<IndividualMovementApplying>().SetTimeOffset();
         }
 
-        GameObject timeTravellerInstance = Instantiate(individualTimeTravellerPrefab, transform.position, transform.rotation, timeTravellerManager);
+        GameObject timeTravellerInstance = Instantiate(individualTimeTravellerPrefab, timeTravellerManager.transform.position, timeTravellerManager.transform.rotation, timeTravellerManager);
         individualTimeTravellers.Add(timeTravellerInstance);
     }
 }

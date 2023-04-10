@@ -161,7 +161,7 @@ MonoBehaviour:
   sr: {fileID: 0}
   moveForce: 15
   maxSpeed: 6
-  jumpForce: 10
+  jumpForce: 12
   isJumping: 0
   onGround: 1
 --- !u!114 &5281728611840840656
@@ -202,12 +202,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeOffset: 0
+  timeInstantiated: 0
   completedMovements: 0
   rb: {fileID: 0}
   sr: {fileID: 0}
   moveForce: 15
   maxSpeed: 6
-  jumpForce: 10
+  jumpForce: 12
   onGround: 1
 --- !u!50 &8939810869670813122
 Rigidbody2D:
