@@ -13,11 +13,6 @@ public class IndividualTimeloop : MonoBehaviour
         InvokeRepeating("TimeTravel", 10.0f, 10.0f);
     }
 
-    private void Update()
-    {
-        // Custom time.deltatime clock?
-    }
-
     void TimeTravel()
     {
         foreach (GameObject timeTraveller in individualTimeTravellers) // for loop instead? (last child should contain the active player script)
@@ -29,6 +24,7 @@ public class IndividualTimeloop : MonoBehaviour
                 timeTraveller.gameObject.GetComponent<IndividualMovementApplying>().enabled = true;
             }
 
+            timeTraveller.gameObject.GetComponentInChildren<Animator>().SetBool("isJumping", false);
             timeTraveller.transform.position = timeTravellerManager.transform.position;
             timeTraveller.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             timeTraveller.gameObject.GetComponent<IndividualMovementApplying>().completedMovements = 0;

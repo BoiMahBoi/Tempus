@@ -13,8 +13,10 @@ public class Player : MonoBehaviour
     public float moveForce;
     public float maxSpeed;
     public float jumpForce;
-    public bool isJumping;
     public bool onGround;
+    public bool isJumping;
+    public bool isJumpOnCooldown;
+    public bool isBounceOnCooldown;
 
     void Start()
     {
@@ -30,7 +32,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && onGround)
+        if (Input.GetKey(KeyCode.Space) && onGround && !isJumpOnCooldown)
         {
             isJumping = true;
         }
@@ -75,22 +77,46 @@ public class Player : MonoBehaviour
             animator.SetBool("isJumping", true);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isJumping = false;
+
+            StartCoroutine("JumpCooldown");
         }
 
-        if(rb.velocity.y < 0.5)
+        if (rb.velocity.y < 0.5)
         {
             animator.SetBool("isJumping", false);
             animator.SetBool("isFalling", true);
         } 
     }
 
-    public void SetOnGround(bool status)
+    IEnumerator JumpCooldown()
     {
-        onGround = status;
-        
-        if (onGround)
+        isJumpOnCooldown = true;
+        yield return new WaitForSeconds(0.25f);
+        isJumpOnCooldown = false;
+    }
+
+    public IEnumerator BounceCooldown()
+    {
+        isBounceOnCooldown = true;
+        yield return new WaitForSeconds(0.25f);
+        isBounceOnCooldown = false;
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (this.enabled == true) // these methods gets called even when the script is disabled, so its necessary to do a check
         {
+            onGround = true;
             animator.SetBool("isFalling", false);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (this.enabled == true) // these methods gets called even when the script is disabled, so its necessary to do a check
+        {
+            onGround = false;
+            animator.SetBool("isFalling", true);
         }
     }
 
