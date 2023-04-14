@@ -59,6 +59,11 @@ public class Player : MonoBehaviour
         else
         {
             animator.SetBool("isRunning", false);
+
+            //if (onGround)
+            //{
+            //    rb.velocity = new Vector2(0.0f, 0.0f);
+            //}
         }
 
         rb.AddForce(Vector2.right * direction * moveForce, ForceMode2D.Force);

@@ -43,7 +43,7 @@ public class IndividualMovementApplying : MonoBehaviour
             {
                 if (Time.time > (float.Parse(moveStorage.movements[completedMovements][2]) + timeOffset))
                 {
-                    // Debug.Log("Completed movement " + completedMovements + " at " + Time.time + " which was supposed to be completed at " + (float.Parse(moveStorage.movements[completedMovements][2]) + timeOffset));
+                    Debug.Log("Completed movement " + completedMovements + " at " + Time.time + " which was supposed to be completed at " + (float.Parse(moveStorage.movements[completedMovements][2]) + timeOffset));
 
                     if (moveStorage.movements[completedMovements][0] == "down")
                     {

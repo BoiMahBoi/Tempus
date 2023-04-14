@@ -116,7 +116,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8939810869670813120}
   - component: {fileID: 8939810869670813123}
-  - component: {fileID: 5281728611840840656}
   - component: {fileID: 8939810869670813125}
   - component: {fileID: 8939810869670813124}
   - component: {fileID: 8939810869670813122}
@@ -167,18 +166,6 @@ MonoBehaviour:
   isJumping: 0
   isJumpOnCooldown: 0
   isBounceOnCooldown: 0
---- !u!114 &5281728611840840656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8939810869670812991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbdb9f7f16664f449ad0448e500fc9fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8939810869670813125
 MonoBehaviour:
   m_ObjectHideFlags: 0
