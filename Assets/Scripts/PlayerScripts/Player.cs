@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public bool isJumping;
     public bool isJumpOnCooldown;
     public bool isBounceOnCooldown;
+    //private Vector3 testVector3 = Vector3.zero;
+
 
     void Start()
     {
@@ -67,6 +69,8 @@ public class Player : MonoBehaviour
         }
 
         rb.AddForce(Vector2.right * direction * moveForce, ForceMode2D.Force);
+        //Vector3 targetVelocity = new Vector2(direction * moveForce, rb.velocity.y);
+        //rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref testVector3, 0.5f);
 
         if (rb.velocity.x > maxSpeed)
         {

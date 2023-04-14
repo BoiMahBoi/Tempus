@@ -19,6 +19,7 @@ public class IndividualMovementApplying : MonoBehaviour
     public bool onGround;
     public bool isJumpOnCooldown;
     public bool isBounceOnCooldown;
+    //private Vector3 testVector3 = Vector3.zero;
 
     void OnEnable()
     {
@@ -43,7 +44,7 @@ public class IndividualMovementApplying : MonoBehaviour
             {
                 if (Time.time > (float.Parse(moveStorage.movements[completedMovements][2]) + timeOffset))
                 {
-                    Debug.Log("Completed movement " + completedMovements + " at " + Time.time + " which was supposed to be completed at " + (float.Parse(moveStorage.movements[completedMovements][2]) + timeOffset));
+                    // Debug.Log("Completed movement " + completedMovements + " at " + Time.time + " which was supposed to be completed at " + (float.Parse(moveStorage.movements[completedMovements][2]) + timeOffset));
 
                     if (moveStorage.movements[completedMovements][0] == "down")
                     {
@@ -106,6 +107,9 @@ public class IndividualMovementApplying : MonoBehaviour
         }
 
         rb.AddForce(Vector2.right * direction * moveForce, ForceMode2D.Force);
+        //Vector3 targetVelocity = new Vector2(direction * moveForce, rb.velocity.y);
+        //rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref testVector3, 0.5f);
+
 
         if (rb.velocity.x > maxSpeed)
         {
