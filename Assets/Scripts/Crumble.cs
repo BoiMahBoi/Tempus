@@ -18,7 +18,7 @@ public class Crumble : MonoBehaviour
             if(collision.gameObject.CompareTag("Crate") && !canCarryCrates)
             {
                 LifeIsSuffering();
-            } else if (!collision.gameObject.CompareTag("Crate"))
+            } else if (!collision.gameObject.CompareTag("Crate") && !collision.gameObject.CompareTag("Collectable"))
             {
                 LifeIsSuffering();
             }
