@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlateScript : MonoBehaviour
+public class HorizontalPlateScript : MonoBehaviour
 {
     private float startY;
     public float endY;
@@ -19,7 +19,7 @@ public class PlateScript : MonoBehaviour
         startY = transform.position.y;
 
         childStartPunkt = new float[childPlatfroms.Length];
-        for(int i = 0; i < childPlatfroms.Length; i++)
+        for (int i = 0; i < childPlatfroms.Length; i++)
         {
             childStartPunkt[i] = childPlatfroms[i].GetComponent<Transform>().position.y;
         }
@@ -27,7 +27,7 @@ public class PlateScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             childMoveUp();
             movevagte();
@@ -43,7 +43,7 @@ public class PlateScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             moveback();
         }
@@ -59,7 +59,7 @@ public class PlateScript : MonoBehaviour
     {
         if (transform.position.y > startY - endY)
         {
-            transform.position = new Vector2(transform.position.x,transform.position.y - (0.05f * platformSpeed));
+            transform.position = new Vector2(transform.position.x, transform.position.y - (0.05f * platformSpeed));
         }
     }
     public void moveback()
@@ -73,19 +73,20 @@ public class PlateScript : MonoBehaviour
     public void childMoveUp()
     {
         int i = 0;
-       foreach(GameObject childObject in childPlatfroms)
+        foreach (GameObject childObject in childPlatfroms)
         {
-            if(childObject.GetComponent<PlateScript>() != null)
+            if (childObject.GetComponent<VerticalPlateScript>() != null)
             {
                 if (childObject.transform.position.y < childStartPunkt[i] + childEndY)
                 {
                     childObject.transform.position = new Vector2(childObject.transform.position.x, childObject.transform.position.y + (0.05f * platformSpeed));
                 }
-            } else if(childObject.GetComponent<Crumble>() != null)
+            }
+            else if (childObject.GetComponent<Crumble>() != null)
             {
                 childObject.GetComponent<Crumble>().LifeIsSuffering();
             }
-            
+
             i++;
         }
     }
