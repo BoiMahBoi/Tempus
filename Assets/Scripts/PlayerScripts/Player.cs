@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && onGround && !isJumpOnCooldown)
         {
+            CreateDust();
             isJumping = true;
         }
     }
@@ -115,6 +116,7 @@ public class Player : MonoBehaviour
     {
         if (this.enabled == true) // these methods gets called even when the script is disabled, so its necessary to do a check
         {
+            CreateDust();
             onGround = true;
             animator.SetBool("isFalling", false);
         }
