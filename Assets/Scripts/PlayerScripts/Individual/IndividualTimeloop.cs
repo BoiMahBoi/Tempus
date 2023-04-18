@@ -34,4 +34,6 @@ public class IndividualTimeloop : MonoBehaviour
         GameObject timeTravellerInstance = Instantiate(individualTimeTravellerPrefab, timeTravellerManager.transform.position, timeTravellerManager.transform.rotation, timeTravellerManager);
         individualTimeTravellers.Add(timeTravellerInstance);
     }
+
+
 }
