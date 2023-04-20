@@ -24,6 +24,12 @@ public class collectableTracker : MonoBehaviour
         //Increments numberOfCollected by 1
         numberOfCollected++;
     }
+
+    public void collectedReset()
+    {
+        //Sets the variable to zero
+        numberOfCollected = 0;
+    }
     
     private void OnTriggerEnter2D(Collider2D collider2D)
     {

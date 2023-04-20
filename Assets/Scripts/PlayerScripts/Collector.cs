@@ -20,9 +20,7 @@ public class Collector : MonoBehaviour
 			//Calls function collectedIncrementer of collectableTracker script
 			collectable.collectedIncrementer();
             //Destroy collided gameobject with tag "Collectable"
-            Destroy(collider2D.gameObject);
-        }
-        
-       
+            collider2D.gameObject.SetActive(false);
+        }       
     }
 }

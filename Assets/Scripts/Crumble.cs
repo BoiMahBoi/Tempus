@@ -30,14 +30,30 @@ public class Crumble : MonoBehaviour
         StartCoroutine(CrumbleObject(crumbleTime));
     }
 
+    public void LifeIsNotSuffering()
+    {
+        StopAllCoroutines();
+        LifeIsBack();
+    }
+
     private IEnumerator CrumbleObject(float crumbleTime)
     {
         isCrumbling = true;
         yield return new WaitForSeconds(crumbleTime);
+        LifeIsGone();
+        yield return new WaitForSeconds(respawnObjectTime);
+        LifeIsBack();
+    }
+
+    private void LifeIsGone()
+    {
         gameObject.GetComponent<ParticleSystem>().Play();
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        yield return new WaitForSeconds(respawnObjectTime);
+    }
+
+    public void LifeIsBack()
+    {
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
         isCrumbling = false;

@@ -7,14 +7,20 @@ public class IndividualTimeloop : MonoBehaviour
     public GameObject individualTimeTravellerPrefab;
     public Transform timeTravellerManager;
     public List<GameObject> individualTimeTravellers = new List<GameObject>();
+    //Field to hold the reference to the script LevelResetManager
+    private LevelResetManager levelResetManager;
 
     void Start()
     {
         InvokeRepeating("TimeTravel", 10.0f, 10.0f);
+        //Reference to the script LevelResetManager
+        levelResetManager = GetComponent<LevelResetManager>();
     }
 
     void TimeTravel()
     {
+        levelResetManager.resetObjectState();
+
         foreach (GameObject timeTraveller in individualTimeTravellers) // for loop instead? (last child should contain the active player script)
         {
             if (timeTraveller.gameObject.GetComponent<Player>().enabled == true)
