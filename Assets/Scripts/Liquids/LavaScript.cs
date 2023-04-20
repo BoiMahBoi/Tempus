@@ -9,7 +9,6 @@ public class LavaScript : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Penis");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
