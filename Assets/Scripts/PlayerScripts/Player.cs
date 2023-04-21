@@ -17,8 +17,6 @@ public class Player : MonoBehaviour
     public bool isJumping;
     public bool isJumpOnCooldown;
     public bool isBounceOnCooldown;
-    //private Vector3 testVector3 = Vector3.zero;
-
 
     void Start()
     {
@@ -36,7 +34,6 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && onGround && !isJumpOnCooldown)
         {
-            CreateDust();
             isJumping = true;
         }
     }
@@ -62,16 +59,9 @@ public class Player : MonoBehaviour
         else
         {
             animator.SetBool("isRunning", false);
-
-            //if (onGround)
-            //{
-            //    rb.velocity = new Vector2(0.0f, 0.0f);
-            //}
         }
 
         rb.AddForce(Vector2.right * direction * moveForce, ForceMode2D.Force);
-        //Vector3 targetVelocity = new Vector2(direction * moveForce, rb.velocity.y);
-        //rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref testVector3, 0.5f);
 
         if (rb.velocity.x > maxSpeed)
         {
@@ -86,6 +76,7 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("isJumping", true);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            CreateDust();
             isJumping = false;
 
             StartCoroutine("JumpCooldown");
@@ -117,8 +108,8 @@ public class Player : MonoBehaviour
         if (this.enabled == true) // these methods gets called even when the script is disabled, so its necessary to do a check
         {
             CreateDust();
-            onGround = true;
             animator.SetBool("isFalling", false);
+            onGround = true;
         }
     }
 
@@ -126,8 +117,8 @@ public class Player : MonoBehaviour
     {
         if (this.enabled == true) // these methods gets called even when the script is disabled, so its necessary to do a check
         {
-            onGround = false;
             animator.SetBool("isFalling", true);
+            onGround = false;
         }
     }
 

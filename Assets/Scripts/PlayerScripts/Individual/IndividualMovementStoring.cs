@@ -8,7 +8,7 @@ public class IndividualMovementStoring : MonoBehaviour
     public bool isStoring = true;
     public List<List<string>> movements = new List<List<string>>();
 
-    void Update()
+    void Update() // switch the boolean playerController replication system with a Tempus relational direction system
     {
         if (isStoring)
         {
