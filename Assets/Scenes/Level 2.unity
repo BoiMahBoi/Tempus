@@ -239,6 +239,10 @@ PrefabInstance:
       propertyPath: canCarryCrates
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4712833371839010827, guid: 5e7f45ff021985a459aebe378dfcf0be, type: 3}
+      propertyPath: respawnObjectTime
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4712833371839010829, guid: 5e7f45ff021985a459aebe378dfcf0be, type: 3}
       propertyPath: m_Name
       value: CrumblingPlatform
@@ -404,7 +408,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327698916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: -0.38, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 22.582966, y: 20.759571, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -723,7 +727,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11.4367285
+  orthographic size: 10.166497
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1135,7 +1139,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -4792,6 +4796,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 4.54
       objectReference: {fileID: 0}
+    - target: {fileID: 2520652764473398530, guid: 7a3442369e4c27149bd7388d7c3adf70, type: 3}
+      propertyPath: respawnObjectTime
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 3309660779471343955, guid: 7a3442369e4c27149bd7388d7c3adf70, type: 3}
       propertyPath: m_Name
       value: Crumble Platform
@@ -4826,7 +4834,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937227701}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6037284, y: 0.559365, z: -0.0134248175}
+  m_LocalPosition: {x: -0.6037284, y: 0.08, z: 3.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
