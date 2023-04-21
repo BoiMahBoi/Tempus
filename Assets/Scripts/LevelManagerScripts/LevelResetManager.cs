@@ -27,10 +27,10 @@ public class LevelResetManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.R))
-        {
-            resetObjectState();
-        }
+        //if (Input.GetKey(KeyCode.R))
+        //{
+        //    resetObjectState();
+        //}
     }
 
     //Function resetting the dynamic objects attached to the array ressettableObjects.
