@@ -4391,6 +4391,10 @@ PrefabInstance:
       propertyPath: movesHorizontally.Array.data[9]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1933860034351339440, guid: 59e5d9d454369be4a961bfb98b1f33d4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2730442526546586543, guid: 59e5d9d454369be4a961bfb98b1f33d4, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -4980,6 +4984,10 @@ PrefabInstance:
       propertyPath: movesHorizontally.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1933860034351339440, guid: 59e5d9d454369be4a961bfb98b1f33d4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2730442526546586543, guid: 59e5d9d454369be4a961bfb98b1f33d4, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -5117,6 +5125,10 @@ PrefabInstance:
     - target: {fileID: 3362056934804159374, guid: 9f61f41d902be9741a1317b67f549342, type: 3}
       propertyPath: m_Name
       value: Weighted platform with crumble
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094290251318963820, guid: 9f61f41d902be9741a1317b67f549342, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6912937151352271328, guid: 9f61f41d902be9741a1317b67f549342, type: 3}
       propertyPath: childEnd.Array.size
