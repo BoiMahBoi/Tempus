@@ -13,6 +13,7 @@ public class WeightedPlatforms : MonoBehaviour
     public GameObject[] childPlatfroms;
     public float[] childEnd;
     public bool[] movesHorizontally;
+    public bool[] PositiveMovement;
     public float[] childMoveSpeed;
     private float[] childStart;
 
@@ -84,15 +85,33 @@ public class WeightedPlatforms : MonoBehaviour
             {
                 if (movesHorizontally[i])
                 {
-                    if (childObject.transform.position.x < childStart[i] + childEnd[i])
+                    if (PositiveMovement[i])
                     {
-                        childObject.transform.position = new Vector2(childObject.transform.position.x + (0.05f * childMoveSpeed[i]), childObject.transform.position.y);
+                        if (childObject.transform.position.x < childStart[i] + childEnd[i])
+                        {
+                            childObject.transform.position = new Vector2(childObject.transform.position.x + (0.05f * childMoveSpeed[i]), childObject.transform.position.y);
+                        }
+                    } else
+                    {
+                        if (childObject.transform.position.x > childStart[i] + childEnd[i])
+                        {
+                            childObject.transform.position = new Vector2(childObject.transform.position.x - (0.05f * childMoveSpeed[i]), childObject.transform.position.y);
+                        }
                     }
                 } else
                 {
-                    if (childObject.transform.position.y < childStart[i] + childEnd[i])
+                    if(PositiveMovement[i])
                     {
-                        childObject.transform.position = new Vector2(childObject.transform.position.x, childObject.transform.position.y + (0.05f * childMoveSpeed[i]));
+                        if (childObject.transform.position.y < childStart[i] + childEnd[i])
+                        {
+                            childObject.transform.position = new Vector2(childObject.transform.position.x, childObject.transform.position.y + (0.05f * childMoveSpeed[i]));
+                        }
+                    } else
+                    {
+                        if (childObject.transform.position.y > childStart[i] + childEnd[i])
+                        {
+                            childObject.transform.position = new Vector2(childObject.transform.position.x, childObject.transform.position.y - (0.05f * childMoveSpeed[i]));
+                        }
                     }
                 }
             }

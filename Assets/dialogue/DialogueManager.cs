@@ -20,7 +20,7 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
-    public void StartDiaLogue (Dialogue dialogue)
+    public void StartDialogue (Dialogue dialogue)
     {
         animator.SetBool("IsOpen", true);           //starter animationen
         
@@ -64,6 +64,4 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", false);          // bruges til at DialogueClose animationen.
     }
-
-    
 }

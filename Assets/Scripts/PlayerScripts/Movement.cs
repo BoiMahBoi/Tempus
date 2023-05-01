@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
     // IF YOU WANT TO RESET THE LEVEL PRESS "R" - IT DELETES ALL NEW PLAYERS AND RESETS PLAYER VALUES
 
     [SerializeField] GameObject playerPrefab; //Reference to the player gameobject, used to instantiate new player clones
+    private LevelResetManager levelResetManager;
 
     [SerializeField] private float moveSpeed = 5f; //The movement speed of the player
     [SerializeField] private float jumpHeight = 3.5f; //The jump height in tiles
@@ -49,6 +50,8 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
+        levelResetManager = GameObject.Find("GameManager").GetComponent<LevelResetManager>();
+
         //Initialposition is set when object is ready
         initialPosition = transform.position;
     }
@@ -59,6 +62,7 @@ public class Movement : MonoBehaviour
         Debug.Log(gameObject.name + " moved to " + transform.position + "  [Case " + roundNumber + "]"); //Debugging for movement error .. 
 
         ResetPlayers();
+        levelResetManager.resetObjectState();
         InstantiateNewPlayer();
     }
 

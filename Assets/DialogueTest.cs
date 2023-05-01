@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//bruges til at trigger animationen. 
-
-public class DialogueTrigger : MonoBehaviour
+public class DialogueTest : MonoBehaviour
 {
+
     public Dialogue dialogue;
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
