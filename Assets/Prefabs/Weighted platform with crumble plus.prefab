@@ -195,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 617339923774018562}
   m_Layer: 0
-  m_Name: Weighted platform with crumble
+  m_Name: Weighted platform with crumble plus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
