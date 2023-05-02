@@ -267,7 +267,7 @@ public class Movement : MonoBehaviour
                 if (rb.velocity.y <= 0)
                 {
                     isFalling = true;
-                    rb.AddForce(Vector2.down * 0.5f, ForceMode2D.Impulse);
+                    //rb.AddForce(Vector2.down * 0.5f, ForceMode2D.Impulse);
 
                 }
             } else
