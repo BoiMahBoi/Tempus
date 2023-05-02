@@ -13,13 +13,15 @@ public class Crumble : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<Rigidbody2D>() != null && !isCrumbling)
+        if (collision.gameObject.GetComponent<Rigidbody2D>() != null && !isCrumbling && !collision.gameObject.CompareTag("Tilemap"))
         {
             if(collision.gameObject.CompareTag("Crate") && !canCarryCrates)
             {
+                Debug.Log("Pik");
                 LifeIsSuffering();
-            } else if (!collision.gameObject.CompareTag("Crate") && !collision.gameObject.CompareTag("Collectable"))
+            } else if ((!collision.gameObject.CompareTag("Crate") || !(collision.gameObject.name == "Crate")) && !collision.gameObject.CompareTag("Collectable"))
             {
+                Debug.Log("Penis");
                 LifeIsSuffering();
             }
         }

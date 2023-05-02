@@ -39,7 +39,6 @@ public class WeightedPlatforms : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Crate"))
         {
-            collision.transform.SetParent(transform);
             childMoveUp();
             movevagte();
         }
@@ -54,7 +53,6 @@ public class WeightedPlatforms : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Crate"))
         {
-            collision.transform.SetParent(null);
             MoveBack();
         }
     }

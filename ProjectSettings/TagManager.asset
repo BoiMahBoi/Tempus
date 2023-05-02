@@ -10,6 +10,7 @@ TagManager:
   - Collectable
   - Crate
   - ExitTrigger
+  - Tilemap
   layers:
   - Default
   - TransparentFX
