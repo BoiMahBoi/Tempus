@@ -34,6 +34,7 @@ public class Movement : MonoBehaviour
     private Vector2 initialPosition; //The initial position of the player, when the level starts
     private bool isGrounded; //Boolean for when player is grounded, to avoid in-air jumps
     private bool isWalled; //Boolean for when player is touching a wall, to avoid getting stcuk on walls
+    [SerializeField] private bool isFalling;
     private bool isPlaying; //Boolean that determines the current state, pausing the players when false
     private bool CallStartNewRound; //Boolean used to start round in fixed update, to avoid timer running on weird values
     private Rigidbody2D rb;
@@ -250,6 +251,7 @@ public class Movement : MonoBehaviour
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
 
+
             //Only player-allowed functions
             if (gameObject.name == "Player")
             {
@@ -259,6 +261,21 @@ public class Movement : MonoBehaviour
                     RecordMovement();
                 }
             }
+
+            if (!isGrounded)
+            {
+                if (rb.velocity.y <= 0)
+                {
+                    isFalling = true;
+                    //rb.AddForce(Vector2.down * 0.5f, ForceMode2D.Impulse);
+
+                }
+            } else
+            {
+                isFalling = false;
+            }
+
+
 
             //Checks if the characters movement is left or right
             if (movementInput != 0)

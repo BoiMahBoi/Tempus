@@ -9350,10 +9350,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6811076778734542525, guid: 5ad4bce9295c4a74e96f794059d6ea96, type: 3}
-      propertyPath: levelTimer
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ad4bce9295c4a74e96f794059d6ea96, type: 3}
 --- !u!1 &1953197302
@@ -9370,7 +9366,7 @@ GameObject:
   - component: {fileID: 1953197306}
   - component: {fileID: 1953197305}
   - component: {fileID: 1953197304}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeightedPlatform 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9843,7 +9839,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -10029,7 +10025,7 @@ GameObject:
   - component: {fileID: 5987790732348035936}
   - component: {fileID: 2565614025579276729}
   - component: {fileID: 110921092287396413}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeightedPlatform 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
