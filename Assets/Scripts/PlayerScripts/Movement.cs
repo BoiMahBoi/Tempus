@@ -33,7 +33,7 @@ public class Movement : MonoBehaviour
     private float boxCastLenght = 0.2f; //Value used in boxcasting to help position and size 
     private Vector2 initialPosition; //The initial position of the player, when the level starts
     private bool isGrounded; //Boolean for when player is grounded, to avoid in-air jumps
-    private bool isWalled; //Boolean for when player is touching a wall, to avoid getting stcuk on walls
+    [SerializeField] private bool isWalled; //Boolean for when player is touching a wall, to avoid getting stcuk on walls
     [SerializeField] private bool isFalling;
     private bool isPlaying; //Boolean that determines the current state, pausing the players when false
     private bool CallStartNewRound; //Boolean used to start round in fixed update, to avoid timer running on weird values
