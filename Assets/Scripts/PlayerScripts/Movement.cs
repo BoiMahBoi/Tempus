@@ -23,7 +23,8 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private LayerMask tilemapLayer; //Reference to layer tilemap is on, and other objects the player should collide with
     [SerializeField] private Transform groundCheck; //Empty Object with transform located at the bottom middle of Gameobject
-    [SerializeField] private Transform wallCheck;   //Empty Object with transform located at the rightsidecal middle of Gameobject
+    [SerializeField] private Transform wallCheckRight; //Empty Object with transform located at the rightside middle of Gameobject
+    [SerializeField] private Transform wallCheckLeft; //Empty Object with transform located at the leftside middle of Gameobject
 
     private float currentTime; //The current time for the round being played
     [SerializeField] private float levelTimer; //The time in seconds, before the round ends
@@ -88,7 +89,7 @@ public class Movement : MonoBehaviour
         jumpInput = 0f; //Setting input to 0, for next round to combat unwanted movement
         transform.position = initialPosition; //Setting player position back to initial position
         rb.velocity = Vector2.zero; rb.angularVelocity = 0f; //Setting velocity to 0, to fix a jump bug occuring right after reset and prevent what else might happen
-        gameObject.transform.localScale = new Vector2(1, 1); //Set the player facing towrds the right
+        gameObject.GetComponent<SpriteRenderer>().flipX = false; //Set the player facing towrds the right
 
     }
 
@@ -216,14 +217,6 @@ public class Movement : MonoBehaviour
         RaycastHit2D groundHit = Physics2D.BoxCast(groundBoxPosition, groundBoxSize, 0f, Vector2.down, boxCastLenght, tilemapLayer);
         isGrounded = (groundHit.collider != null);
 
-        //Calculate the size and position of wall box cast
-        Vector2 wallBoxSize = new Vector2(boxCastLenght, gameObject.GetComponent<BoxCollider2D>().size.y);
-        Vector2 wallBoxPosition = new Vector2(wallCheck.position.x, wallCheck.position.y);
-
-        // Check if player is walled using a box cast
-        RaycastHit2D wallHit = Physics2D.BoxCast(wallBoxPosition, wallBoxSize, 0f, Vector2.right, boxCastLenght, tilemapLayer);
-        isWalled = (wallHit.collider != null);
-
         //Checks if a round is currently being played
         if (isPlaying)
         {
@@ -280,16 +273,33 @@ public class Movement : MonoBehaviour
             //Checks if the characters movement is left or right
             if (movementInput != 0)
             {
-                //If the characters movement input is to the right, the scale on x is set to 1 flipping the sprite to the original direction
+                Vector2 wallBoxSize = new Vector2(boxCastLenght, gameObject.GetComponent<BoxCollider2D>().size.y);
+
+                //If the characters movement input is to the right, the spriterenderer on x is set to 1 flipping the sprite to the original direction
                 if (movementInput > 0)
                 {
-                    gameObject.transform.localScale = new Vector2(1, 1);
+
+                    gameObject.GetComponent<SpriteRenderer>().flipX = false;
+
+                    //Calculate the size and position of wall box cast
+                    Vector2 wallBoxPosition = new Vector2(wallCheckRight.position.x, wallCheckRight.position.y);
+
+                    //Check if player is walled using a box cast
+                    RaycastHit2D wallHit = Physics2D.BoxCast(wallBoxPosition, wallBoxSize, 0f, Vector2.right, boxCastLenght, tilemapLayer);
+                    isWalled = (wallHit.collider != null);
                 }
-                //If the characters movement input is to the left, the scale on x is set to -1 flipping the sprite to the opposite direction
+
+                //If the characters movement input is to the left, the spriterenderer on x is set to -1 flipping the sprite to the opposite direction
                 else if (movementInput < 0)
                 {
-                    gameObject.transform.localScale = new Vector2(-1, 1);
+                    gameObject.GetComponent<SpriteRenderer>().flipX = true;
 
+                    //Calculate the size and position of wall box cast
+                    Vector2 wallBoxPosition = new Vector2(wallCheckLeft.position.x, wallCheckLeft.position.y);
+
+                    //Check if player is walled using a box cast
+                    RaycastHit2D wallHit = Physics2D.BoxCast(wallBoxPosition, wallBoxSize, 0f, Vector2.left, boxCastLenght, tilemapLayer);
+                    isWalled = (wallHit.collider != null);
                 }
             }
 
@@ -324,14 +334,6 @@ public class Movement : MonoBehaviour
         Debug.DrawLine(groundBottomRight, groundBottomLeft);
         Debug.DrawLine(groundTopLeft, groundTopRight);
 
-        // Drawing the wall box cast using Debug.DrawLine
-        Vector2 topLeft = new Vector2(wallBoxPosition.x - wallBoxSize.x / 2, wallBoxPosition.y + wallBoxSize.y / 2);
-        Vector2 topRight = new Vector2(wallBoxPosition.x + wallBoxSize.x / 2, wallBoxPosition.y + wallBoxSize.y / 2);
-        Vector2 bottomLeft = new Vector2(wallBoxPosition.x - wallBoxSize.x / 2, wallBoxPosition.y - wallBoxSize.y / 2);
-        Vector2 bottomRight = new Vector2(wallBoxPosition.x + wallBoxSize.x / 2, wallBoxPosition.y - wallBoxSize.y / 2);
-        Debug.DrawLine(topLeft, topRight);
-        Debug.DrawLine(topRight, bottomRight);
-        Debug.DrawLine(bottomRight, bottomLeft);
-        Debug.DrawLine(bottomLeft, topLeft);
+       
     }
 }
