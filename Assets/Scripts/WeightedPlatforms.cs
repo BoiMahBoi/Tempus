@@ -32,6 +32,8 @@ public class WeightedPlatforms : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            collision.gameObject.transform.SetParent(gameObject.transform);
+            collision.gameObject.transform.localScale = new Vector3(1 / gameObject.transform.localScale.x, 1, 1);
             childMoveUp();
             movevagte();
             
@@ -39,6 +41,7 @@ public class WeightedPlatforms : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Crate"))
         {
+            collision.gameObject.transform.SetParent(gameObject.transform);
             childMoveUp();
             movevagte();
         }
@@ -48,11 +51,13 @@ public class WeightedPlatforms : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            collision.gameObject.transform.SetParent(null);
             MoveBack();
         }
 
         if (collision.gameObject.CompareTag("Crate"))
         {
+            collision.gameObject.transform.SetParent(null);
             MoveBack();
         }
     }

@@ -5525,6 +5525,10 @@ PrefabInstance:
       value: Sasja
       objectReference: {fileID: 0}
     - target: {fileID: 6504500327135133948, guid: 5fa03366cd9a94644a59e5c2f78fe5bd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504500327135133948, guid: 5fa03366cd9a94644a59e5c2f78fe5bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.40098
       objectReference: {fileID: 0}
