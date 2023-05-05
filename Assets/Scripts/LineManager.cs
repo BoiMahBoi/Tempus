@@ -8,6 +8,7 @@ public class LineManager : MonoBehaviour
     private GameObject[] lines;
 
     public Material lineMaterial;
+    public GameObject overlay;
 
     public Transform[] startPoint;
     public Transform[] endPoint;
@@ -44,12 +45,20 @@ public class LineManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Tab))
         {
-            for(int i = 0; i < lines.Length; i++)
+            if (overlay != null)
+            {
+                overlay.SetActive(true);
+            }
+            for (int i = 0; i < lines.Length; i++)
             {
                 lines[i].GetComponent<LineRenderer>().enabled = true;
             }
         } else if (Input.GetKeyUp(KeyCode.Tab))
         {
+            if(overlay != null)
+            {
+                overlay.SetActive(false);
+            }
             for (int i = 0; i < lines.Length; i++)
             {
                 lines[i].GetComponent<LineRenderer>().enabled = false;
