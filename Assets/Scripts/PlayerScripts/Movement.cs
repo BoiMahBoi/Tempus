@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEngine.ParticleSystem;
 
 public class Movement : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Movement : MonoBehaviour
     private float lastMovement; //Value for last input used to control player, Used to check if a new input is used.
 
     [SerializeField] private LayerMask tilemapLayer; //Reference to layer tilemap is on, and other objects the player should collide with
+    [SerializeField] private ParticleSystem dust;
     [SerializeField] private Transform groundCheck; //Empty Object with transform located at the bottom middle of Gameobject
     [SerializeField] private Transform wallCheckRight; //Empty Object with transform located at the rightside middle of Gameobject
     [SerializeField] private Transform wallCheckLeft; //Empty Object with transform located at the leftside middle of Gameobject
@@ -157,6 +159,10 @@ public class Movement : MonoBehaviour
             if (currentTime == listMovement[i][0])
             {
                 movementInput = listMovement[i][1];
+                if (isGrounded)
+                {
+                    CreateDust();
+                }
             }
         }
     }
@@ -170,6 +176,11 @@ public class Movement : MonoBehaviour
                 jumpInput = listJump[i][1];
             }
         }
+    }
+
+    void CreateDust()
+    {
+        dust.Play();
     }
 
     void Update()
@@ -213,6 +224,7 @@ public class Movement : MonoBehaviour
         Vector2 groundBoxSize = new Vector2(gameObject.GetComponent<BoxCollider2D>().size.x, boxCastLenght);
         Vector2 groundBoxPosition = new Vector2(groundCheck.position.x, groundCheck.position.y);
 
+
         // Check if player is grounded using a box cast
         RaycastHit2D groundHit = Physics2D.BoxCast(groundBoxPosition, groundBoxSize, 0f, Vector2.down, boxCastLenght, tilemapLayer);
         isGrounded = (groundHit.collider != null);
@@ -242,6 +254,7 @@ public class Movement : MonoBehaviour
                 // Calculate jump force based on jump height, and thereafter adding that force upwards
                 float jumpForce = Mathf.Sqrt(2 * jumpHeight * Physics2D.gravity.magnitude);
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                CreateDust();
             }
 
 
@@ -255,14 +268,10 @@ public class Movement : MonoBehaviour
                 }
             }
 
-            if (!isGrounded)
+            if (!isGrounded && rb.velocity.y <= 0)
             {
-                if (rb.velocity.y <= 0)
-                {
-                    isFalling = true;
-                    //rb.AddForce(Vector2.down * 0.5f, ForceMode2D.Impulse);
+                isFalling = true;
 
-                }
             } else
             {
                 isFalling = false;
