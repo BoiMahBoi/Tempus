@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ae865506089e094478cea2bce189041a
+guid: be632e5d8ac80cd4a87bbfc3e83a2523
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,17 +101,41 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: little pteranodon sprite2_0
+      name: pteranodon sprite2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 11
-        height: 11
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8c3ab81e54224549bcbb176905e8fa8
-      internalID: 1138974813
+      spriteID: df7f6ac36c15b574fa85e8e2c51100d7
+      internalID: 568546384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: little pteranodon sprite2_1
+      name: pteranodon sprite2_1
       rect:
         serializedVersion: 2
-        x: 11
+        x: 18
         y: 0
-        width: 11
-        height: 11
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bae856a2bf5e8444f962e369c708d981
-      internalID: 2067683683
+      spriteID: 778813c1b4c4b2743a6fbd9fcd6533ad
+      internalID: 1821083227
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: little pteranodon sprite2_2
+      name: pteranodon sprite2_2
       rect:
         serializedVersion: 2
-        x: 22
+        x: 36
         y: 0
-        width: 11
-        height: 11
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1be89073b769bfb47918841e8edd964f
-      internalID: 608705389
+      spriteID: 328ff0eda3c9a7c4dbf7eba7ff94dd33
+      internalID: -1708828949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: little pteranodon sprite2_3
+      name: pteranodon sprite2_3
       rect:
         serializedVersion: 2
-        x: 33
+        x: 54
         y: 0
-        width: 11
-        height: 11
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5b6fe725e841ee40987edee9a32c755
-      internalID: 371996709
+      spriteID: a6471c768da08844ebce5f92512222dc
+      internalID: 669694025
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: little pteranodon sprite2_4
+      name: pteranodon sprite2_4
       rect:
         serializedVersion: 2
-        x: 44
+        x: 72
         y: 0
-        width: 11
-        height: 11
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a3620f42446a1940bfc530c34ff6ebe
-      internalID: -1682528127
+      spriteID: ceff84d364f2c2c4f94c3b307bf8de94
+      internalID: 1307649342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: little pteranodon sprite2_5
+      name: pteranodon sprite2_5
       rect:
         serializedVersion: 2
-        x: 55
+        x: 90
         y: 0
-        width: 11
-        height: 11
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 791caf498b42213428e652dff8303856
-      internalID: -198747394
+      spriteID: 7178cc3da7682d94b8bd3af5bbe413bf
+      internalID: 1137151269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: little pteranodon sprite2_6
+      name: pteranodon sprite2_6
       rect:
         serializedVersion: 2
-        x: 66
+        x: 108
         y: 0
-        width: 11
-        height: 11
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,20 +269,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88de7125787a5a542b82a0210f8da37e
-      internalID: 1942825005
+      spriteID: 5a4800aa6ca802848950b0fe057b16cb
+      internalID: -1384119465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: little pteranodon sprite2_7
+      name: pteranodon sprite2_7
       rect:
         serializedVersion: 2
-        x: 77
+        x: 126
         y: 0
-        width: 11
-        height: 11
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,20 +290,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7502c8c847447b4092ad076f4940169
-      internalID: 553096998
+      spriteID: df0fc10550812ea47bd329922a5d3f6f
+      internalID: -1040255619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: little pteranodon sprite2_8
+      name: pteranodon sprite2_8
       rect:
         serializedVersion: 2
-        x: 88
+        x: 144
         y: 0
-        width: 11
-        height: 11
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,20 +311,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cc589b015ddac1448b304fd2da2c889
-      internalID: 1134469852
+      spriteID: 65f0fe1b82de63849b8f2380f4f1bd65
+      internalID: -1638134188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: little pteranodon sprite2_9
+      name: pteranodon sprite2_9
       rect:
         serializedVersion: 2
-        x: 99
+        x: 162
         y: 0
-        width: 11
-        height: 11
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,20 +332,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8f0edbc54396f143926a32c56a3b930
-      internalID: -1195245988
+      spriteID: 24175d938a891d348a000d217d23c7fa
+      internalID: 1408233133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: little pteranodon sprite2_10
+      name: pteranodon sprite2_10
       rect:
         serializedVersion: 2
-        x: 110
+        x: 180
         y: 0
-        width: 11
-        height: 11
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,20 +353,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae85ea1fe740015439a84b85a3f18d17
-      internalID: -1844098359
+      spriteID: e64749fabaa36f24e979ed0149786e1b
+      internalID: 1647385679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: little pteranodon sprite2_11
+      name: pteranodon sprite2_11
       rect:
         serializedVersion: 2
-        x: 121
+        x: 198
         y: 0
-        width: 11
-        height: 11
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,8 +374,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa1857b100237214a9926499ed3603c2
-      internalID: -708518914
+      spriteID: 37b605d13d8b7f640909a5398dc3840b
+      internalID: 1704982540
       vertices: []
       indices: 
       edges: []
@@ -367,18 +391,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      little pteranodon sprite2_0: 1138974813
-      little pteranodon sprite2_1: 2067683683
-      little pteranodon sprite2_10: -1844098359
-      little pteranodon sprite2_11: -708518914
-      little pteranodon sprite2_2: 608705389
-      little pteranodon sprite2_3: 371996709
-      little pteranodon sprite2_4: -1682528127
-      little pteranodon sprite2_5: -198747394
-      little pteranodon sprite2_6: 1942825005
-      little pteranodon sprite2_7: 553096998
-      little pteranodon sprite2_8: 1134469852
-      little pteranodon sprite2_9: -1195245988
+      pteranodon sprite2_0: 568546384
+      pteranodon sprite2_1: 1821083227
+      pteranodon sprite2_10: 1647385679
+      pteranodon sprite2_11: 1704982540
+      pteranodon sprite2_2: -1708828949
+      pteranodon sprite2_3: 669694025
+      pteranodon sprite2_4: 1307649342
+      pteranodon sprite2_5: 1137151269
+      pteranodon sprite2_6: -1384119465
+      pteranodon sprite2_7: -1040255619
+      pteranodon sprite2_8: -1638134188
+      pteranodon sprite2_9: 1408233133
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
