@@ -12,6 +12,8 @@ public class collectableTracker : MonoBehaviour
     //Integer holding the value of the number of collected collectables
     [SerializeField] public int numberOfCollected;
 
+    public string nextLevel;
+
     void Start()
     {
         //Finding all gameobjects with the specified tag and adding them to the Array allCollectables
@@ -37,7 +39,7 @@ public class collectableTracker : MonoBehaviour
         if (collider2D.gameObject.CompareTag("Player") && numberOfCollected == allCollectables.Length)
         {
             //Loading next scene in the Build Index
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(nextLevel);
         }
     }
 }
