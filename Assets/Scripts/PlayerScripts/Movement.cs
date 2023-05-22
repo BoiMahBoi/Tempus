@@ -41,6 +41,7 @@ public class Movement : MonoBehaviour
     private bool isPlaying; //Boolean that determines the current state, pausing the players when false
     private bool CallStartNewRound; //Boolean used to start round in fixed update, to avoid timer running on weird values
     private Rigidbody2D rb;
+    private Animator animator;
 
     //Float array lists storing the values for movement, jump and current time, used to move players
     public List<float[]> listJump = new List<float[]>();
@@ -50,6 +51,7 @@ public class Movement : MonoBehaviour
     {
         //Getting reference to rigidbody
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -105,6 +107,8 @@ public class Movement : MonoBehaviour
             roundNumber++; //Incrementing the number of rounds by one
             newPlayer.transform.position = initialPosition; //Setting the new players position equal to the initial position
             newPlayer.GetComponent<SpriteRenderer>().color = UnityEngine.Random.ColorHSV(); //Colouring the new player a random colour using spriterenderer component
+            newPlayer.GetComponent<SpriteRenderer>().sortingOrder = 0;
+            newPlayer.transform.localScale = Vector3.one;
 
             //Setting the range of the new player movement and jump list equal to the current ones, so that they can hold the same values
             newPlayer.GetComponent<Movement>().listJump.AddRange(listJump);
@@ -254,6 +258,7 @@ public class Movement : MonoBehaviour
                 // Calculate jump force based on jump height, and thereafter adding that force upwards
                 float jumpForce = Mathf.Sqrt(2 * jumpHeight * Physics2D.gravity.magnitude);
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                animator.SetBool("isJumping", true);
                 CreateDust();
             }
 
@@ -270,10 +275,13 @@ public class Movement : MonoBehaviour
 
             if (!isGrounded && rb.velocity.y <= 0)
             {
+                animator.SetBool("isJumping", false);
+                animator.SetBool("isFalling", true);
                 isFalling = true;
 
             } else
             {
+                animator.SetBool("isFalling", false);
                 isFalling = false;
             }
 
@@ -310,8 +318,15 @@ public class Movement : MonoBehaviour
                     RaycastHit2D wallHit = Physics2D.BoxCast(wallBoxPosition, wallBoxSize, 0f, Vector2.left, boxCastLenght, tilemapLayer);
                     isWalled = (wallHit.collider != null);
                 }
-            }
 
+                if(isGrounded && !animator.GetBool("isRunning"))
+                {
+                    animator.SetBool("isRunning", true);
+                }
+            }
+            else if (movementInput == 0 && animator.GetBool("isRunning")) {
+                animator.SetBool("isRunning", false);
+            }
             PlayMovement(); //Calling funtion to check if new movement input is stored
             PlayJump(); //Calling funtion to check is new jump input is stored
         }

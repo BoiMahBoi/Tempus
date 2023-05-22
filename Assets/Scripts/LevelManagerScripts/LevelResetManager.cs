@@ -44,9 +44,12 @@ public class LevelResetManager : MonoBehaviour
             {
                 resettableObjects[i].SetActive(true);
             }
+
+            if (resettableObjects[i].GetComponent<Rigidbody2D>() != null)
+            {
+                resettableObjects[i].GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            }
         }
         collectable.collectedReset();
     }
 }
-
-
