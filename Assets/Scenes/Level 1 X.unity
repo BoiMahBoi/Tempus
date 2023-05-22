@@ -432,6 +432,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6811076778734542525, guid: 5ad4bce9295c4a74e96f794059d6ea96, type: 3}
+      propertyPath: levelTimer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ad4bce9295c4a74e96f794059d6ea96, type: 3}
 --- !u!1 &162332477
@@ -2644,7 +2648,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d3cd93904ac316f40ac9bca41df09aaf, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.677
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6268,7 +6272,7 @@ PrefabInstance:
     - target: {fileID: 7107053457283408792, guid: bad08c8dde0917d4bae4c931bbca98e9, type: 3}
       propertyPath: lineMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+      objectReference: {fileID: 2100000, guid: 08201c57749b7d945a6cd1dff89730b0, type: 2}
     - target: {fileID: 7107053457283408792, guid: bad08c8dde0917d4bae4c931bbca98e9, type: 3}
       propertyPath: endPoint.Array.size
       value: 3
@@ -7311,6 +7315,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1937227702}
     m_Modifications:
+    - target: {fileID: 2062354421, guid: 0d7c5846f4448ac4d97c5c71343daaae, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2062354421, guid: 0d7c5846f4448ac4d97c5c71343daaae, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 0.48
