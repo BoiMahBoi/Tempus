@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CutScene/start/LabCutscene.unity
     guid: 3d2f53d3d635ed441a597899f41d294e
+  - enabled: 1
+    path: Assets/Scenes/Level 3 X After Cutscene.unity
+    guid: 75e84c3bb390cb843811b55d456cb3b2
   m_configObjects: {}

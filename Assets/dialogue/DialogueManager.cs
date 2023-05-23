@@ -16,11 +16,16 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
 
     public string nextSceneOnDialogueEnd;
+    public bool triggerDialogueManually;
 
     //laver Queue
     void Start()
     {
         sentences = new Queue<string>();
+        if(triggerDialogueManually)
+        {
+            GetComponent<DialogueTrigger>().enabled = true;
+        }
     }
 
     public void StartDialogue (Dialogue dialogue)
