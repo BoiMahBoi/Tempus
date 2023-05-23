@@ -33,7 +33,7 @@ public class collectableTracker : MonoBehaviour
         numberOfCollected = 0;
     }
     
-    private void OnTriggerEnter2D(Collider2D collider2D)
+    private void OnTriggerStay2D(Collider2D collider2D)
     {
         //On collision with gameobject tagged "Player" and all collectables have been collected.
         if (collider2D.gameObject.CompareTag("Player") && numberOfCollected == allCollectables.Length)

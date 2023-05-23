@@ -10,6 +10,16 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Start()
     {
+        TriggerDialogue();
+    }
+
+    private void OnEnable()
+    {
+        TriggerDialogue();
+    }
+
+    public void TriggerDialogue()
+    {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 }

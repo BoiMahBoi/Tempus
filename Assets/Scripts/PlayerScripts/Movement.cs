@@ -37,11 +37,12 @@ public class Movement : MonoBehaviour
     private Vector2 initialPosition; //The initial position of the player, when the level starts
     private bool isGrounded; //Boolean for when player is grounded, to avoid in-air jumps
     [SerializeField] private bool isWalled; //Boolean for when player is touching a wall, to avoid getting stcuk on walls
-    [SerializeField] private bool isFalling;
+    //[SerializeField] private bool isFalling;
     private bool isPlaying; //Boolean that determines the current state, pausing the players when false
     private bool CallStartNewRound; //Boolean used to start round in fixed update, to avoid timer running on weird values
     private Rigidbody2D rb;
     private Animator animator;
+    private GameObject beginText;
 
     //Float array lists storing the values for movement, jump and current time, used to move players
     public List<float[]> listJump = new List<float[]>();
@@ -52,6 +53,7 @@ public class Movement : MonoBehaviour
         //Getting reference to rigidbody
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        beginText = GameObject.Find("BeginText");
     }
 
     void Start()
@@ -60,6 +62,7 @@ public class Movement : MonoBehaviour
 
         //Initialposition is set when object is ready
         initialPosition = transform.position;
+        animator.Play("TimeRift");
     }
 
     void ResetRound()
@@ -70,6 +73,8 @@ public class Movement : MonoBehaviour
         ResetPlayers();
         levelResetManager.resetObjectState();
         InstantiateNewPlayer();
+        animator.Play("TimeRift");
+        beginText.SetActive(true);
     }
 
     void ResetLevel()
@@ -200,6 +205,10 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P) && !isPlaying) //Checks if the round is not playing, and if P is pressed
         {
+            if(beginText != null)
+            {
+                beginText.SetActive(false);
+            }
             CallStartNewRound = true; //Boolean used to call StartNewRound() in fixedupdate, since it SHAN'T be called in update, ruining the whole mechanic
         }
 
@@ -277,12 +286,12 @@ public class Movement : MonoBehaviour
             {
                 animator.SetBool("isJumping", false);
                 animator.SetBool("isFalling", true);
-                isFalling = true;
+                //isFalling = true;
 
             } else
             {
                 animator.SetBool("isFalling", false);
-                isFalling = false;
+                //isFalling = false;
             }
 
 

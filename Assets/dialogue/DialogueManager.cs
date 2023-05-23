@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
@@ -13,6 +14,8 @@ public class DialogueManager : MonoBehaviour
     public Queue<string> sentences;
 
     public Animator animator;
+
+    public string nextSceneOnDialogueEnd;
 
     //laver Queue
     void Start()
@@ -63,5 +66,10 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);          // bruges til at DialogueClose animationen.
+
+        if(nextSceneOnDialogueEnd.Length > 0)
+        {
+            SceneManager.LoadScene(nextSceneOnDialogueEnd);
+        }
     }
 }

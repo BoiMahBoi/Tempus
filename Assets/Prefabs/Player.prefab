@@ -4986,7 +4986,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1415653789, guid: c5268a5356c09ff44a76155e8485aba3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5020,10 +5020,10 @@ MonoBehaviour:
   groundCheck: {fileID: 6811076778294902127}
   wallCheckRight: {fileID: 6811076778331195632}
   wallCheckLeft: {fileID: 1163154158}
-  levelTimer: 10
+  levelTimer: 15
   roundNumber: 1
   isWalled: 0
-  isFalling: 0
+  beginText: {fileID: 0}
 --- !u!50 &6811076778734542522
 Rigidbody2D:
   serializedVersion: 4
