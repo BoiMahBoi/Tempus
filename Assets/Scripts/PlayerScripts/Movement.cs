@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using static UnityEngine.ParticleSystem;
@@ -111,7 +112,7 @@ public class Movement : MonoBehaviour
             newPlayer.name = "Player " + roundNumber; //Naming the new player object the same number as the before-played round
             roundNumber++; //Incrementing the number of rounds by one
             newPlayer.transform.position = initialPosition; //Setting the new players position equal to the initial position
-            newPlayer.GetComponent<SpriteRenderer>().color = UnityEngine.Random.ColorHSV(); //Colouring the new player a random colour using spriterenderer component
+            newPlayer.GetComponent<SpriteRenderer>().color  = new Color(1, 1, 1, 0.5f); ; //Colouring the new player a random colour using spriterenderer component
             newPlayer.GetComponent<SpriteRenderer>().sortingOrder = 0;
             newPlayer.transform.localScale = Vector3.one;
 
