@@ -1649,7 +1649,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 24
-      m_TileSpriteIndex: 22
+      m_TileSpriteIndex: 27
       m_TileMatrixIndex: 4
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3390,8 +3390,8 @@ Tilemap:
     m_Data: {fileID: 218849904, guid: cf99d258ce31f68438890dd6857fda7b, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 556473339, guid: cf99d258ce31f68438890dd6857fda7b, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 1662725313, guid: cf99d258ce31f68438890dd6857fda7b, type: 3}
   - m_RefCount: 1
@@ -3400,8 +3400,8 @@ Tilemap:
     m_Data: {fileID: 837080309, guid: cf99d258ce31f68438890dd6857fda7b, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -2031483752, guid: cf99d258ce31f68438890dd6857fda7b, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 556473339, guid: cf99d258ce31f68438890dd6857fda7b, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 1389624690, guid: cf99d258ce31f68438890dd6857fda7b, type: 3}
   - m_RefCount: 2
@@ -3765,7 +3765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6912937151352271328, guid: 9f61f41d902be9741a1317b67f549342, type: 3}
       propertyPath: childEnd.Array.data[0]
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6912937151352271328, guid: 9f61f41d902be9741a1317b67f549342, type: 3}
       propertyPath: childMoveSpeed.Array.size
@@ -3777,7 +3777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6912937151352271328, guid: 9f61f41d902be9741a1317b67f549342, type: 3}
       propertyPath: childMoveSpeed.Array.data[0]
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6912937151352271328, guid: 9f61f41d902be9741a1317b67f549342, type: 3}
       propertyPath: childPlatfroms.Array.data[0]
@@ -3802,6 +3802,10 @@ PrefabInstance:
     - target: {fileID: 8576181887830539958, guid: 9f61f41d902be9741a1317b67f549342, type: 3}
       propertyPath: crumbleTime
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576181887830539958, guid: 9f61f41d902be9741a1317b67f549342, type: 3}
+      propertyPath: canCarryCrates
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f61f41d902be9741a1317b67f549342, type: 3}
@@ -4001,8 +4005,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2062354420, guid: 0d7c5846f4448ac4d97c5c71343daaae, type: 3}
-      propertyPath: m_GravityScale
+      propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2062354420, guid: 0d7c5846f4448ac4d97c5c71343daaae, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 701113172113614757, guid: 0d7c5846f4448ac4d97c5c71343daaae, type: 3}
       propertyPath: m_RootOrder
