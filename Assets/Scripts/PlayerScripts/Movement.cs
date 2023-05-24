@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.ShaderGraph;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using static UnityEngine.ParticleSystem;
 
@@ -44,6 +45,7 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private GameObject beginText;
+    public bool canPlay;
 
     //Float array lists storing the values for movement, jump and current time, used to move players
     public List<float[]> listJump = new List<float[]>();
@@ -100,7 +102,6 @@ public class Movement : MonoBehaviour
         transform.position = initialPosition; //Setting player position back to initial position
         rb.velocity = Vector2.zero; rb.angularVelocity = 0f; //Setting velocity to 0, to fix a jump bug occuring right after reset and prevent what else might happen
         gameObject.GetComponent<SpriteRenderer>().flipX = false; //Set the player facing towrds the right
-
     }
 
     void InstantiateNewPlayer()
@@ -204,7 +205,7 @@ public class Movement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.P) && !isPlaying) //Checks if the round is not playing, and if P is pressed
+        if (Input.GetKeyDown(KeyCode.P) && !isPlaying && canPlay) //Checks if the round is not playing, and if P is pressed
         {
             if(beginText != null)
             {
@@ -213,10 +214,15 @@ public class Movement : MonoBehaviour
             CallStartNewRound = true; //Boolean used to call StartNewRound() in fixedupdate, since it SHAN'T be called in update, ruining the whole mechanic
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && !isPlaying) //Checks if the round is not playing, and if P is pressed
+        if (Input.GetKeyDown(KeyCode.R)) //Checks if the round is not playing, and if P is pressed
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        /*if (Input.GetKeyDown(KeyCode.R) && !isPlaying) //Checks if the round is not playing, and if P is pressed
         {
             ResetLevel();
-        }
+        }*/
     }
 
     private void FixedUpdate()

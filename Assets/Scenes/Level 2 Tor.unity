@@ -11261,6 +11261,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6811076778734542525, guid: 5ad4bce9295c4a74e96f794059d6ea96, type: 3}
+      propertyPath: canPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811076778734542525, guid: 5ad4bce9295c4a74e96f794059d6ea96, type: 3}
       propertyPath: levelTimer
       value: 10
       objectReference: {fileID: 0}
@@ -12526,7 +12530,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0

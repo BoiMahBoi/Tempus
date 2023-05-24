@@ -72,6 +72,11 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", false);          // bruges til at DialogueClose animationen.
 
+        if(GameObject.Find("Player") != null)
+        {
+            GameObject.Find("Player").GetComponent<Movement>().canPlay = true;
+        }
+
         if(nextSceneOnDialogueEnd.Length > 0)
         {
             SceneManager.LoadScene(nextSceneOnDialogueEnd);

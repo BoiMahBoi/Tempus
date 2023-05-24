@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 3 X After Cutscene.unity
     guid: 75e84c3bb390cb843811b55d456cb3b2
+  - enabled: 1
+    path: Assets/Scenes/LastLevel.unity
+    guid: 7704eba72c4f7674784d650981c59079
+  - enabled: 1
+    path: Assets/Scenes/CutScene/slut/StueCutsceneEnd.unity
+    guid: 48910d4a08c72dd4f82ff65e4106d6d2
+  - enabled: 1
+    path: Assets/Scenes/CutScene/slut/LabCutsceneEnd.unity
+    guid: d62ff77a24112f04ba03b9d960fb4c8f
   m_configObjects: {}
