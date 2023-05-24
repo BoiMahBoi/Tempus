@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4712833371839010826}
   - component: {fileID: 4712833371839010823}
   - component: {fileID: 4712833371839010822}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CrumblingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crumbleTime: 1
   respawnObjectTime: 1
+  canCarryCrates: 0
 --- !u!61 &4712833371839010826
 BoxCollider2D:
   m_ObjectHideFlags: 0
