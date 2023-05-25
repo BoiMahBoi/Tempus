@@ -5023,7 +5023,7 @@ MonoBehaviour:
   levelTimer: 15
   roundNumber: 1
   isWalled: 0
-  beginText: {fileID: 0}
+  canPlay: 0
 --- !u!50 &6811076778734542522
 Rigidbody2D:
   serializedVersion: 4
