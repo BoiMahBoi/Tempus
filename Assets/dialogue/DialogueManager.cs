@@ -18,6 +18,9 @@ public class DialogueManager : MonoBehaviour
     public string nextSceneOnDialogueEnd;
     public bool triggerDialogueManually;
 
+    public int triggerAnimSentence;
+    public GameObject SceneAnimator;
+
     //laver Queue
     void Start()
     {
@@ -53,6 +56,11 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         
+        if(sentences.Count == triggerAnimSentence)
+        {
+            SceneAnimator.SetActive(true);
+        }
+
         string sentence = sentences.Dequeue();
         StopAllCoroutines();                        //bruger en StopAllCoroutines til vhis spilleren shipper. så der ikke er flere dialogue der kører samtidet
         StartCoroutine(TypeSentence(sentence));     //bruger coroutines for at lave lidt text animation. 
