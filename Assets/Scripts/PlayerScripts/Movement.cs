@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.ShaderGraph;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
@@ -77,7 +78,7 @@ public class Movement : MonoBehaviour
         levelResetManager.resetObjectState();
         InstantiateNewPlayer();
         animator.Play("TimeRift");
-        beginText.SetActive(true);
+        beginText.GetComponent<TextMeshProUGUI>().SetText("Press P to begin loop");
     }
 
     void ResetLevel()
@@ -207,10 +208,7 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P) && !isPlaying && canPlay) //Checks if the round is not playing, and if P is pressed
         {
-            if(beginText != null)
-            {
-                beginText.SetActive(false);
-            }
+            beginText.GetComponent<TextMeshProUGUI>().SetText("Press R to restart loop");
             CallStartNewRound = true; //Boolean used to call StartNewRound() in fixedupdate, since it SHAN'T be called in update, ruining the whole mechanic
         }
 
@@ -218,11 +216,6 @@ public class Movement : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-
-        /*if (Input.GetKeyDown(KeyCode.R) && !isPlaying) //Checks if the round is not playing, and if P is pressed
-        {
-            ResetLevel();
-        }*/
     }
 
     private void FixedUpdate()
