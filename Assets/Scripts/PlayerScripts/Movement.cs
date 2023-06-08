@@ -216,6 +216,11 @@ public class Movement : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) //Checks if the round is not playing, and if P is pressed
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
     private void FixedUpdate()

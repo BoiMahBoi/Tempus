@@ -1302,7 +1302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
+  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 0.7254902}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1361,8 +1361,10 @@ MonoBehaviour:
   nameText: {fileID: 754921167}
   dialogueText: {fileID: 788104166}
   animator: {fileID: 1747428036}
-  nextSceneOnDialogueEnd: MainMenu
+  nextSceneOnDialogueEnd: PhotoScene
   triggerDialogueManually: 0
+  triggerAnimSentence: 0
+  SceneAnimator: {fileID: 0}
 --- !u!114 &1763845917
 MonoBehaviour:
   m_ObjectHideFlags: 0

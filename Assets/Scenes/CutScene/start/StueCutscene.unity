@@ -996,6 +996,9 @@ MonoBehaviour:
   dialogueText: {fileID: 1456636064}
   animator: {fileID: 1516442604}
   nextSceneOnDialogueEnd: LabCutscene
+  triggerDialogueManually: 0
+  triggerAnimSentence: 0
+  SceneAnimator: {fileID: 0}
 --- !u!114 &1193789523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1453,7 +1456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
+  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 0.7254902}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
