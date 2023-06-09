@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: bfe7c340559fc5848b3f8dd7da99b1bf
+  - enabled: 1
     path: Assets/Scenes/Level 1 Tor.unity
     guid: e0d63403bf583664693230640f583078
   - enabled: 1
@@ -41,7 +44,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CutScene/slut/PhotoScene.unity
     guid: 0c75ed2f2985f514e94df2f6813b658a
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: bfe7c340559fc5848b3f8dd7da99b1bf
   m_configObjects: {}
