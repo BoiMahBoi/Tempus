@@ -5126,6 +5126,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2216921231214239623, guid: 94d1337c117f3bc40a1c093aad7687d0, type: 3}
   m_PrefabInstance: {fileID: 76349257}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &132431803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5977841448936035357, guid: f5c43c4e383eb0a4abb06dc1fb518b39, type: 3}
+  m_PrefabInstance: {fileID: 1858443133}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &132431804
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132431803}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31568162937881c4a8454549d4c6548a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &365313121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11835,6 +11861,18 @@ PrefabInstance:
     - target: {fileID: 5977841448936035344, guid: f5c43c4e383eb0a4abb06dc1fb518b39, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5977841448936035344, guid: f5c43c4e383eb0a4abb06dc1fb518b39, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.7851
+      objectReference: {fileID: 0}
+    - target: {fileID: 5977841448936035344, guid: f5c43c4e383eb0a4abb06dc1fb518b39, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.74212
+      objectReference: {fileID: 0}
+    - target: {fileID: 5977841448936035344, guid: f5c43c4e383eb0a4abb06dc1fb518b39, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.47851
       objectReference: {fileID: 0}
     - target: {fileID: 5977841448936035344, guid: f5c43c4e383eb0a4abb06dc1fb518b39, type: 3}
       propertyPath: m_LocalPosition.x
